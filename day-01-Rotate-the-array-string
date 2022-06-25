@@ -1,0 +1,25 @@
+class Solution {
+public:
+    void reverseString(vector<char>& s) {
+        
+        int h=s.size()-1;
+        int l=0;
+        while(l<h){
+            swap(s[l++],s[h--]);
+        }
+        
+    }
+};
+
+class Solution {
+public:
+    void rotate(vector<int>& nums, int k) {
+        int n=nums.size();
+        vector<int>v(n);
+        for(int i=0;i<n;i++){
+            v[(i+k)%n]=nums[i];
+        }
+        nums=v;
+        
+    }
+};
