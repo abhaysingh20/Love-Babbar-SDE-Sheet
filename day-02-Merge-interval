@@ -1,0 +1,24 @@
+class Solution {
+public:
+    vector<vector<int>> merge(vector<vector<int>>& num) {
+        
+         vector<vector<int>>v;
+        sort(num.begin(),num.end());
+        v.push_back(num[0]);
+        
+        int k=0;
+        for(int i=1;i<num.size();i++){
+            
+            if(num[i][0]>v[k][1])
+            {
+                v.push_back(num[i]);
+                k++;
+            }
+            else {
+                v[k][1]=max(v[k][1],num[i][1]);
+            }
+        }
+        return v;
+        
+    }
+};
