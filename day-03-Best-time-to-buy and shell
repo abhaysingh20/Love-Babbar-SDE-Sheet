@@ -1,0 +1,21 @@
+class Solution {
+public:
+    int maxProfit(vector<int>& pri) {
+        
+        int n=pri.size();
+        
+        int maxright=pri[n-1];
+        
+        int maxpro=0;
+        
+        for(int i=n-2;i>=0;i--){
+            
+            maxright=max(maxright,pri[i]);
+            
+            maxpro=max(maxpro,maxright-pri[i]);
+        }
+        
+        return maxpro;
+        
+    }
+};
