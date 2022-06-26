@@ -1,0 +1,25 @@
+class Solution{
+public:
+
+	void rearrange(int arr[], int n) {
+	    
+	    int brr[n],crr[n],j=0,k=0;
+	    for(int i=0;i<n;i++){
+	        if(arr[i]>=0)
+	        brr[j++]=arr[i];
+	        else crr[k++]=arr[i];
+	    }
+	    int p=0,q=0,i=0;
+	    while(p<j&&q<k){
+	        arr[i++]=brr[p++];
+	        arr[i++]=crr[q++];
+	    }
+	    while(p<j){
+	        arr[i++]=brr[p++];
+	    }
+	    while(q<k){
+	        arr[i++]=crr[q++];
+	    }
+	}
+};
+
