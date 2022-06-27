@@ -1,0 +1,28 @@
+class Solution {
+public:
+    int trap(vector<int>& he) {
+        int s=0,e=he.size()-1;
+        int leftmax=0,rightmax=0;
+        int ans=0;
+        
+        while(s<=e){
+            leftmax=max(leftmax,he[s]);
+            
+            rightmax=max(rightmax,he[e]);
+                
+                if(leftmax<=rightmax){
+                    
+                    ans+=leftmax-he[s];
+                    s++;
+                }
+               else if(leftmax>=rightmax){
+                   
+                   ans+=rightmax-he[e];
+                   e--;
+               }
+            
+        }
+        return ans;
+        
+    }
+};
