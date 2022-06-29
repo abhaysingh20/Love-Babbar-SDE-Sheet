@@ -1,0 +1,20 @@
+class Solution{
+    public:
+    double MedianOfArrays(vector<int>& arr1, vector<int>& arr2)
+    {
+        for(int i=0;i<arr2.size();i++){
+            arr1.push_back(arr2[i]);
+        }
+        sort(arr1.begin(),arr1.end());
+        double ans;
+        int a=arr1.size();
+        if(a%2){
+            ans=(double)arr1[a/2];
+        }
+        else {
+            ans=(double)(arr1[a/2-1]+arr1[a/2])/2;
+        }
+        return ans;
+    
+    }
+};
